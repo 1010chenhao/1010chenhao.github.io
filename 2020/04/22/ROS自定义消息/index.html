@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="ROS自定义消息"/>
+
+
+
+
+  <meta name="keywords" content="ROS," />
+
+
+
+
+
+  <link rel="alternate" href="/default" title="自知">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2020/04/22/ROS自定义消息/"/>
+
+
+<meta name="description" content="前言ROS自定义消息，需要先建立msg文件后再编译生成头文件 主要流程 在src同级目录下建立msg文件夹  在msg文件夹创建  xxx.msg文件，一定要以msg为后缀，并在里面定义数据类型： 12int64 person_idgeometry_msgs::Point p  需要注意的是ros中有特定的消息类型，如必须使用int64来代替int    msg c++对应类型 python对应类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ROS自定义消息">
+<meta property="og:url" content="http://yoursite.com/2020/04/22/ROS%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF/index.html">
+<meta property="og:site_name" content="自知">
+<meta property="og:description" content="前言ROS自定义消息，需要先建立msg文件后再编译生成头文件 主要流程 在src同级目录下建立msg文件夹  在msg文件夹创建  xxx.msg文件，一定要以msg为后缀，并在里面定义数据类型： 12int64 person_idgeometry_msgs::Point p  需要注意的是ros中有特定的消息类型，如必须使用int64来代替int    msg c++对应类型 python对应类">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-22T00:25:33.000Z">
+<meta property="article:modified_time" content="2020-04-22T01:02:28.397Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="ROS">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> ROS自定义消息 - 自知 </title>
+  <meta name="generator" content="Hexo 4.2.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">自知</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          ROS自定义消息
+        
+      </h1>
+
+      <time class="post-time">
+          Apr 22 2020
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>ROS自定义消息，需要先建立msg文件后再编译生成头文件</p>
+<h1 id="主要流程"><a href="#主要流程" class="headerlink" title="主要流程"></a>主要流程</h1><ol>
+<li><p>在src同级目录下建立msg文件夹</p>
+</li>
+<li><p>在msg文件夹创建  <strong>xxx.msg</strong>文件，一定要以msg为后缀，并在里面定义数据类型：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int64 person_id</span><br><span class="line">geometry_msgs::Point p</span><br></pre></td></tr></table></figure>
+
+<p><strong>需要注意的是ros中有特定的消息类型，如必须使用int64来代替int</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">msg</th>
+<th align="center">c++对应类型</th>
+<th align="center">python对应类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">bool</td>
+<td align="center">bool</td>
+<td align="center">bool</td>
+</tr>
+<tr>
+<td align="left">int8</td>
+<td align="center">int8_t</td>
+<td align="center">int</td>
+</tr>
+<tr>
+<td align="left">int16</td>
+<td align="center">int16_t</td>
+<td align="center">int</td>
+</tr>
+<tr>
+<td align="left">int32</td>
+<td align="center">int32_t</td>
+<td align="center">int</td>
+</tr>
+<tr>
+<td align="left">int64</td>
+<td align="center">int64_t</td>
+<td align="center">int,long</td>
+</tr>
+<tr>
+<td align="left">uint8</td>
+<td align="center">uint8_t</td>
+<td align="center">int</td>
+</tr>
+<tr>
+<td align="left">uint16</td>
+<td align="center">uint16_t</td>
+<td align="center">int</td>
+</tr>
+<tr>
+<td align="left">uint32</td>
+<td align="center">uint32_t</td>
+<td align="center">int</td>
+</tr>
+<tr>
+<td align="left">uint64</td>
+<td align="center">uint64_t</td>
+<td align="center">long</td>
+</tr>
+<tr>
+<td align="left">float32</td>
+<td align="center">float</td>
+<td align="center">float</td>
+</tr>
+<tr>
+<td align="left">float64</td>
+<td align="center">float</td>
+<td align="center">float</td>
+</tr>
+<tr>
+<td align="left">string</td>
+<td align="center">std::string</td>
+<td align="center">str</td>
+</tr>
+<tr>
+<td align="left">time</td>
+<td align="center">ros::Time</td>
+<td align="center">rospy.Time</td>
+</tr>
+<tr>
+<td align="left">duration</td>
+<td align="center">ros::Duration</td>
+<td align="center">rospy.Duration</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<ol start="3">
+<li><p>添加编译支持</p>
+<ol>
+<li><p>在<code>package.xml</code>中添加编译依赖项和运行依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;build_depend&gt;message_generation&lt;&#x2F;build_depend&gt;</span><br><span class="line">&lt;run_depend&gt;message_runtime&lt;&#x2F;run_depend&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>CMakeLists.txt:</code></p>
+<ol>
+<li><p><code>find_package()</code>中添加message_generation</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">find_package(catkin REQUIRED COMPONENTS</span><br><span class="line">  roscpp</span><br><span class="line">  rosmsg</span><br><span class="line">  rospy</span><br><span class="line">  message_generation</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>add_message_files()</code>中添加 xxx.msg</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">add_message_files(</span><br><span class="line">        FILES</span><br><span class="line">        xxx.msg</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加<code>generation_msg</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">generate_messages(</span><br><span class="line">        DEPENDENCIES</span><br><span class="line">        std_msgs</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改<code>catkin_package</code>，结果如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">catkin_package(</span><br><span class="line">#  INCLUDE_DIRS include</span><br><span class="line">#  LIBRARIES demo_msg</span><br><span class="line">#  CATKIN_DEPENDS roscpp rosmsg rospy</span><br><span class="line">#  DEPENDS system_lib</span><br><span class="line">        CATKIN_DEPENDS message_runtime</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h1 id="检验生成的自定义消息"><a href="#检验生成的自定义消息" class="headerlink" title="检验生成的自定义消息"></a>检验生成的自定义消息</h1><h3 id="1-编译项目"><a href="#1-编译项目" class="headerlink" title="1. 编译项目"></a>1. 编译项目</h3><p>来到工作空间目录下，运行编译</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">catkin_make</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-查看生成的头文件"><a href="#2-查看生成的头文件" class="headerlink" title="2. 查看生成的头文件"></a>2. 查看生成的头文件</h3><p>来到<code>devel</code>的<code>include</code>目录下，如果生成了头文件说明，自定义消息创建成功。</p>
+<h3 id="3-通过rosmsg工具校验"><a href="#3-通过rosmsg工具校验" class="headerlink" title="3. 通过rosmsg工具校验"></a>3. 通过rosmsg工具校验</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rosmsg show rplidar_ros/obstacleMsg.h</span><br></pre></td></tr></table></figure>
+
+<p>查看运行结果，运行结果和自己定义的相一致，说明成功。</p>
+<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>5.使用方法<br>在需要使用的”.cpp”文件中添加</p>
+<p><code>#include &lt;rplidar_ros/obstacleMsg.h&gt;</code><br>其中rplidar_ros是消息文件夹msg或该消息所在的ROS包的名字,obstacleMsg.h是消息的名字对应的”.h”文件</p>
+<p>使用时要按照下面格式定义变量</p>
+<p><code>rplidar_ros::obstacleMsg obstacle;</code><br>其中rplidar_ros是消息文件夹msg或该消息所在的ROS包的名字,obstacleMsg是消息的名字,obstacle是根据自定义消息类型定义的变量</p>
+<p>定义后按照下面方法赋值使用</p>
+<p>obstacle.data = 0x01;</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+		<div class="post-tags">
+		  
+			<a href="/tags/ROS/">ROS</a>
+		  
+		</div>
+		
+
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2020/04/22/ROS%E7%BC%96%E7%A8%8B1/">
+        <span class="next-text nav-default">ROS话题编程</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2014 -
+    
+    2020
+    <span class="footer-author">John Doe.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear" target="_blank" rel="noopener">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

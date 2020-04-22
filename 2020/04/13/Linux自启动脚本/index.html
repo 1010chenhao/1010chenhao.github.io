@@ -165,7 +165,7 @@
 <p><img src="https://www.corvin.cn/wp-content/uploads/image/20180531/1527737330451564.png" alt="Screenshot from 2018-05-31 10:57:01.png"></p>
 <p>————————————————————————————————————————</p>
 <h2 id="方法三：使用systemd文件"><a href="#方法三：使用systemd文件" class="headerlink" title="方法三：使用systemd文件"></a>方法三：使用systemd文件</h2><hr>
-<p><font color=#FF0000> 从 Ubuntu 16.10 开始的新版本全部使用 systemd 实现初始化时服务的自启动</font></p>
+<p><font color="#FF0000"> 从 Ubuntu 16.10 开始的新版本全部使用 systemd 实现初始化时服务的自启动</font></p>
 <p>systemd 默认读取 /etc/systemd/system 下的配置文件，该目录下的文件会链接/lib/systemd/system/下的文件</p>
 <p>所以，我们要在<strong>/etc/systemd/system</strong>中创建service脚本文件：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;my_script.service</span><br></pre></td></tr></table></figure>
