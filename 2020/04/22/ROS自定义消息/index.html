@@ -43,7 +43,7 @@
 <meta property="og:description" content="前言ROS自定义消息，需要先建立msg文件后再编译生成头文件 主要流程 在src同级目录下建立msg文件夹  在msg文件夹创建  xxx.msg文件，一定要以msg为后缀，并在里面定义数据类型： 12int64 person_idgeometry_msgs::Point p  需要注意的是ros中有特定的消息类型，如必须使用int64来代替int    msg c++对应类型 python对应类">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-22T00:25:33.000Z">
-<meta property="article:modified_time" content="2020-04-22T01:02:28.397Z">
+<meta property="article:modified_time" content="2020-04-22T01:05:56.808Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="ROS">
 <meta name="twitter:card" content="summary">
@@ -254,7 +254,7 @@
 <h3 id="3-通过rosmsg工具校验"><a href="#3-通过rosmsg工具校验" class="headerlink" title="3. 通过rosmsg工具校验"></a>3. 通过rosmsg工具校验</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rosmsg show rplidar_ros/obstacleMsg.h</span><br></pre></td></tr></table></figure>
 
 <p>查看运行结果，运行结果和自己定义的相一致，说明成功。</p>
-<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>5.使用方法<br>在需要使用的”.cpp”文件中添加</p>
+<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>在需要使用的”.cpp”文件中添加</p>
 <p><code>#include &lt;rplidar_ros/obstacleMsg.h&gt;</code><br>其中rplidar_ros是消息文件夹msg或该消息所在的ROS包的名字,obstacleMsg.h是消息的名字对应的”.h”文件</p>
 <p>使用时要按照下面格式定义变量</p>
 <p><code>rplidar_ros::obstacleMsg obstacle;</code><br>其中rplidar_ros是消息文件夹msg或该消息所在的ROS包的名字,obstacleMsg是消息的名字,obstacle是根据自定义消息类型定义的变量</p>
