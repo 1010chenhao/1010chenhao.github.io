@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="ROS话题编程"/>
+
+
+
+
+  <meta name="keywords" content="ROS," />
+
+
+
+
+
+  <link rel="alternate" href="/default" title="自知">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2020/04/22/ROS编程1/"/>
+
+
+<meta name="description" content="话题通讯机制ROS的核心就是分布式通讯机制，ROS的所有软件和工具都是基于这种分布式通讯机制之上的。ROS的通讯机制主要有：  话题通讯（topic） 服务通讯（server） 动作通讯（action）  话题通讯是最为复杂，最为频繁的通讯模式，其模型如下图所示：  ROS 通信机制的过程：  Talker启动，通过端口向节点管理器（ROS Master）注册发布者的信息，包含所要发布消息的话题名">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ROS话题编程">
+<meta property="og:url" content="http://yoursite.com/2020/04/22/ROS%E7%BC%96%E7%A8%8B1/index.html">
+<meta property="og:site_name" content="自知">
+<meta property="og:description" content="话题通讯机制ROS的核心就是分布式通讯机制，ROS的所有软件和工具都是基于这种分布式通讯机制之上的。ROS的通讯机制主要有：  话题通讯（topic） 服务通讯（server） 动作通讯（action）  话题通讯是最为复杂，最为频繁的通讯模式，其模型如下图所示：  ROS 通信机制的过程：  Talker启动，通过端口向节点管理器（ROS Master）注册发布者的信息，包含所要发布消息的话题名">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:%5CUsers%5Cbutters%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1587512155677.png">
+<meta property="article:published_time" content="2020-04-21T23:29:39.000Z">
+<meta property="article:modified_time" content="2020-04-22T00:16:44.001Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="ROS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:%5CUsers%5Cbutters%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1587512155677.png">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> ROS话题编程 - 自知 </title>
+  <meta name="generator" content="Hexo 4.2.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">自知</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          ROS话题编程
+        
+      </h1>
+
+      <time class="post-time">
+          Apr 22 2020
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h1 id="话题通讯机制"><a href="#话题通讯机制" class="headerlink" title="话题通讯机制"></a>话题通讯机制</h1><p>ROS的核心就是分布式通讯机制，ROS的所有软件和工具都是基于这种分布式通讯机制之上的。ROS的通讯机制主要有：</p>
+<ul>
+<li>话题通讯（topic）</li>
+<li>服务通讯（server）</li>
+<li>动作通讯（action）</li>
+</ul>
+<p>话题通讯是最为复杂，最为频繁的通讯模式，其模型如下图所示：</p>
+<p><img src="C:%5CUsers%5Cbutters%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1587512155677.png" alt="1587512155677"></p>
+<p>ROS 通信机制的过程：</p>
+<ol>
+<li><p>Talker启动，通过端口向节点管理器（ROS Master）注册发布者的信息，包含所要发布消息的话题名;随后ROS Master会将该节点的注册信息放入注册列表中储存起来，以等待接受此话题的接收者Listener。 </p>
+</li>
+<li><p>Listener启动，通过使用RPC向节点管理器（ROS Master）注册接收者的信息，包括所需订阅的话题名。 </p>
+</li>
+<li><p>ROS Master根据Listener所需的订阅话题在注册列表寻找与之匹配的话题，如果没有找到匹配的发布者，则等待发布者的加入，如果找到可以与之匹配的发布者信息，则可以向Listener发送Talker的RPC地址信息。 </p>
+</li>
+<li><p>Listener接收到Talker的RPC地址信息，就尝试向Talker发送连接许可，以便于传输订阅的话题名，消息类型以及TCP/UDP。 </p>
+</li>
+<li><p>Talker接受到Listener发来的连接请求后，继续向Listener确认链接信息，其中包括其本身的TCP信息 </p>
+</li>
+<li><p>Listener接收到确认的消息后，使用TCP与Talker进行连接 </p>
+</li>
+</ol>
+<p>连接成功后，Talker向Listener发送话题消息类型。</p>
+<p><strong>节点通过话题发布消息，节点也可以订阅话题来接收来自其他节点的消息</strong></p>
+<p>一个简单的例子：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* talker.cpp */</span></span><br><span class="line"><span class="comment">/*---------------------*/</span></span><br><span class="line">include <span class="string">"ros/ros.h"</span></span><br><span class="line">include &lt;iostream&gt;</span><br><span class="line">include <span class="string">"std_msgs/String.h"</span></span><br><span class="line">include &lt;sstream&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">    <span class="comment">//ros节点初始化</span></span><br><span class="line">    ros::init(argc,argv,<span class="string">"talker"</span>)</span><br><span class="line">    <span class="comment">//创建节柄(是节点与master通讯的工具)</span></span><br><span class="line">    ros::NodeHandle nh;</span><br><span class="line">    <span class="comment">//创建一个publisher，发布chatter话题，消息类型为std_msgs::String</span></span><br><span class="line">    ros::Publisher chatter_pub = nh.advertise&lt;std_msgs::<span class="keyword">String</span>&gt;(<span class="string">"chatter"</span>,<span class="number">10</span>);</span><br><span class="line">    <span class="comment">// 设置循环的频率</span></span><br><span class="line">    <span class="function">ros::Rate <span class="title">loop_rate</span><span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(ros::ok())</span><br><span class="line">        &#123;</span><br><span class="line">        <span class="comment">// 初始化std_msgs::String类型的消息</span></span><br><span class="line">        std_msgs::<span class="keyword">String</span> msg;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">stringstream</span> ss;</span><br><span class="line">        ss &lt;&lt; <span class="string">"this hello world is from C++"</span> &lt;&lt; count;</span><br><span class="line">        msg.data = ss.str();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 发布消息</span></span><br><span class="line">        ROS_INFO(<span class="string">"%s"</span>, msg.data.c_str());</span><br><span class="line">        chatter_pub.publish(msg);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 循环等待回调函数</span></span><br><span class="line">        ros::spinOnce();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 按照循环频率延时</span></span><br><span class="line">        loop_rate.sleep();</span><br><span class="line">        ++count;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* listener.cpp */</span></span><br><span class="line"><span class="comment">/*---------------------*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"ros/ros.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"std_msgs/String.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义回调函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">chatterCallback</span><span class="params">(<span class="keyword">const</span> std_msgs::<span class="keyword">String</span>::ConstPtr&amp; msg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ROS_INFO(<span class="string">"I heard:[%s]"</span>,msg-&gt;data.c_str());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//初始化ROS节点</span></span><br><span class="line">    ros::init(argc,argv,<span class="string">"listener"</span>);</span><br><span class="line">    <span class="comment">//句柄</span></span><br><span class="line">    ros::NodeHandle nh;</span><br><span class="line">    <span class="comment">//创建一个subscriber，订阅chatter话题，接受来自publisher的消息，并触发回调函数chatterCallback</span></span><br><span class="line">    ros::Subscriber sub = nh.subscribe(<span class="string">"chatter"</span>,<span class="number">1000</span>,chatterCallback);</span><br><span class="line">    <span class="comment">//循环等待回调函数</span></span><br><span class="line">    ros::spin()</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+		<div class="post-tags">
+		  
+			<a href="/tags/ROS/">ROS</a>
+		  
+		</div>
+		
+
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2020/04/13/Linux%E8%87%AA%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/">
+        <span class="next-text nav-default">Linux自启动脚本</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2014 -
+    
+    2020
+    <span class="footer-author">John Doe.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear" target="_blank" rel="noopener">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>
