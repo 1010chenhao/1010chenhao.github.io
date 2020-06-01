@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="解决Bodyreaderpoll运行后无结果的问题"/>
+
+
+
+
+  <meta name="keywords" content="Linux," />
+
+
+
+
+
+  <link rel="alternate" href="/default" title="自知">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2020/06/02/解决Bodyreaderpoll运行后无结果的问题/"/>
+
+
+<meta name="description" content="网上说是因为缺少libpng12这个库的原因，插件BodyTracking插件的运行需要这个库。 1https:&#x2F;&#x2F;3dclub.orbbec3d.com&#x2F;t&#x2F;black-screen-when-running-simplebodyviewer-sfml&#x2F;1786&#x2F;3  12345678gaborpappJan &#39;19The Bo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决Bodyreaderpoll运行后无结果的问题">
+<meta property="og:url" content="http://yoursite.com/2020/06/02/%E8%A7%A3%E5%86%B3Bodyreaderpoll%E8%BF%90%E8%A1%8C%E5%90%8E%E6%97%A0%E7%BB%93%E6%9E%9C%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="自知">
+<meta property="og:description" content="网上说是因为缺少libpng12这个库的原因，插件BodyTracking插件的运行需要这个库。 1https:&#x2F;&#x2F;3dclub.orbbec3d.com&#x2F;t&#x2F;black-screen-when-running-simplebodyviewer-sfml&#x2F;1786&#x2F;3  12345678gaborpappJan &#39;19The Bo">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-01T18:20:04.000Z">
+<meta property="article:modified_time" content="2020-06-01T18:24:48.160Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> 解决Bodyreaderpoll运行后无结果的问题 - 自知 </title>
+  <meta name="generator" content="Hexo 4.2.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">自知</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          解决Bodyreaderpoll运行后无结果的问题
+        
+      </h1>
+
+      <time class="post-time">
+          Jun 02 2020
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>网上说是因为缺少libpng12这个库的原因，插件BodyTracking插件的运行需要这个库。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;3dclub.orbbec3d.com&#x2F;t&#x2F;black-screen-when-running-simplebodyviewer-sfml&#x2F;1786&#x2F;3</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gaborpappJan &#39;19</span><br><span class="line">The BodyTracking plugin requires libpng12. If it cannot be loaded it fails silently unless the log level is raised in astra.toml. Installing libpng12 solves the issue for me.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">pierrepFeb &#39;19</span><br><span class="line">I can confirm that installing libpng12 is also needed to get the body tracking working on Ubuntu 18.04.</span><br><span class="line">You can install the .deb here as 18.04 doesn&#39;t have it by default in the repos: </span><br><span class="line">https:&#x2F;&#x2F;packages.ubuntu.com&#x2F;xenial&#x2F;amd64&#x2F;libpng12-0&#x2F;download13</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在usr/lib/aarch64-lib中发现了libpng16.so.16这个库，而在/lib/aarch64-lib中没有。复制过去即可：</p>
+<p>sudo   cp   /usr/lib/aarch64-lib/libpng16.so.16   /lib/aarch63-lib</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+		<div class="post-tags">
+		  
+			<a href="/tags/Linux/">Linux</a>
+		  
+		</div>
+		
+
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2020/04/29/openni%E5%BC%80%E5%8F%91-1/">
+        <span class="next-text nav-default">openni开发(1)</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2014 -
+    
+    2020
+    <span class="footer-author">John Doe.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear" target="_blank" rel="noopener">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>
