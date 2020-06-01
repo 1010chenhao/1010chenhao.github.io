@@ -1,364 +1,991 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    
-<meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-
-
-
-  <link rel="alternate" href="/default" title="自知">
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
-
-
-
-<link rel="canonical" href="http://yoursite.com/"/>
-
-
+  <meta name="description" content="当代文学大师——杨爱民">
 <meta property="og:type" content="website">
-<meta property="og:title" content="自知">
+<meta property="og:title" content="仰山杨爱民">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="自知">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="og:site_name" content="仰山杨爱民">
+<meta property="og:description" content="当代文学大师——杨爱民">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="A.Yang">
 <meta name="twitter:card" content="summary">
 
-
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
-<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+<link rel="canonical" href="http://yoursite.com/">
 
 
-
-
-
-<script type="text/javascript">
-  var themeConfig = {
-    fancybox: {
-      enable: false
-    },
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
   };
 </script>
 
-
-
-
+  <title>仰山杨爱民</title>
   
 
 
 
-    <title> 自知 - </title>
-  <meta name="generator" content="Hexo 4.2.0"></head>
-
-  <body>
-    <div id="page">
-      <header id="masthead"><div class="site-header-inner">
-    <h1 class="site-title">
-        <a href="/." class="logo">自知</a>
-    </h1>
-
-    <nav id="nav-top">
-        
-            <ul id="menu-top" class="nav-top-items">
-                
-                    <li class="menu-item">
-                        <a href="/archives">
-                            
-                            
-                                Archives
-                            
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a href="/about">
-                            
-                            
-                                About
-                            
-                        </a>
-                    </li>
-                
-            </ul>
-        
-  </nav>
-</div>
-
-      </header>
-      <div id="content">
-        
-    <div id="primary" class="home">
-        
-            
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2020/06/02/%E8%A7%A3%E5%86%B3Bodyreaderpoll%E8%BF%90%E8%A1%8C%E5%90%8E%E6%97%A0%E7%BB%93%E6%9E%9C%E7%9A%84%E9%97%AE%E9%A2%98/">解决Bodyreaderpoll运行后无结果的问题</a>
-        
-      </h1>
-
-      <time class="post-time">
-          Jun 02 2020
-      </time>
-    </header>
 
 
 
-    
-        <div class="post-excerpt post-content">
-            
-            
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-            
-          
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    
-  </article>
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
-        
-            
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2020/04/29/openni%E5%BC%80%E5%8F%91-1/">openni开发(1)</a>
-        
-      </h1>
+</head>
 
-      <time class="post-time">
-          Apr 29 2020
-      </time>
-    </header>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
 
-
-
-    
-        <div class="post-excerpt post-content">
-            
-            
-
-            
-          
-
-    
-  </article>
-
-        
-            
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2020/04/28/light-coding/">结构光深度感应器原理</a>
-        
-      </h1>
-
-      <time class="post-time">
-          Apr 28 2020
-      </time>
-    </header>
-
-
-
-    
-        <div class="post-excerpt post-content">
-            
-            
-
-            
-          
-
-    
-  </article>
-
-        
-            
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2020/04/22/ROS%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF/">ROS自定义消息</a>
-        
-      </h1>
-
-      <time class="post-time">
-          Apr 22 2020
-      </time>
-    </header>
-
-
-
-    
-        <div class="post-excerpt post-content">
-            
-            
-
-            
-          
-
-    
-  </article>
-
-        
-            
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2020/04/22/ROS%E7%BC%96%E7%A8%8B1/">ROS话题编程</a>
-        
-      </h1>
-
-      <time class="post-time">
-          Apr 22 2020
-      </time>
-    </header>
-
-
-
-    
-        <div class="post-excerpt post-content">
-            
-            
-
-            
-          
-
-    
-  </article>
-
-        
-            
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2020/04/13/Linux%E8%87%AA%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/">Linux自启动脚本</a>
-        
-      </h1>
-
-      <time class="post-time">
-          Apr 13 2020
-      </time>
-    </header>
-
-
-
-    
-        <div class="post-excerpt post-content">
-            
-            
-
-            
-          
-
-    
-  </article>
-
-        
-            
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2020/04/13/20200413/">20200413</a>
-        
-      </h1>
-
-      <time class="post-time">
-          Apr 13 2020
-      </time>
-    </header>
-
-
-
-    
-        <div class="post-excerpt post-content">
-            
-            
-
-            
-          
-
-    
-  </article>
-
-        
-        
-  <nav class="pagination">
-    
-    
-  </nav>
-
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    <div id="secondary">
-    
+  </div>
 
-    
+  <div class="site-meta">
 
-    
-    <section id="tags" class="widget-area widget_tags">
-        <h3 class="widget-title">Tags</h3>
-        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ROS/" rel="tag">ROS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openni/" rel="tag">openni</a><span class="tag-list-count">2</span></li></ul>
-    </section>
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">仰山杨爱民</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">金克丝的含义就是金克丝</p>
+  </div>
 
-
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
 </div>
 
 
-      </div>
 
-      <footer id="colophon"><span class="copyright-year">
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">7</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
     
-        &copy;
-    
-        2014 -
-    
-    2020
-    <span class="footer-author">John Doe.</span>
-    <span class="power-by">
-        Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear" target="_blank" rel="noopener">Polar Bear</a>
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/%E8%A7%A3%E5%86%B3Bodyreaderpoll%E8%BF%90%E8%A1%8C%E5%90%8E%E6%97%A0%E7%BB%93%E6%9E%9C%E7%9A%84%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/%E2%80%AAC:%5CUsers%5Cbutters%5CPictures%5C1.PNG">
+      <meta itemprop="name" content="A.Yang">
+      <meta itemprop="description" content="当代文学大师——杨爱民">
     </span>
-</span>
 
-      </footer>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="仰山杨爱民">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/%E8%A7%A3%E5%86%B3Bodyreaderpoll%E8%BF%90%E8%A1%8C%E5%90%8E%E6%97%A0%E7%BB%93%E6%9E%9C%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">解决Bodyreaderpoll运行后无结果的问题</a>
+        </h2>
 
-      <div class="back-to-top" id="back-to-top">
-        <i class="iconfont icon-up"></i>
-      </div>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 02:20:04 / 修改时间：02:24:48" itemprop="dateCreated datePublished" datetime="2020-06-02T02:20:04+08:00">2020-06-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>网上说是因为缺少libpng12这个库的原因，插件BodyTracking插件的运行需要这个库。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;3dclub.orbbec3d.com&#x2F;t&#x2F;black-screen-when-running-simplebodyviewer-sfml&#x2F;1786&#x2F;3</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gaborpappJan &#39;19</span><br><span class="line">The BodyTracking plugin requires libpng12. If it cannot be loaded it fails silently unless the log level is raised in astra.toml. Installing libpng12 solves the issue for me.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">pierrepFeb &#39;19</span><br><span class="line">I can confirm that installing libpng12 is also needed to get the body tracking working on Ubuntu 18.04.</span><br><span class="line">You can install the .deb here as 18.04 doesn&#39;t have it by default in the repos: </span><br><span class="line">https:&#x2F;&#x2F;packages.ubuntu.com&#x2F;xenial&#x2F;amd64&#x2F;libpng12-0&#x2F;download13</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在usr/lib/aarch64-lib中发现了libpng16.so.16这个库，而在/lib/aarch64-lib中没有。复制过去即可：</p>
+<p>sudo   cp   /usr/lib/aarch64-lib/libpng16.so.16   /lib/aarch63-lib</p>
+
+      
     </div>
-    
-
 
     
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/29/openni%E5%BC%80%E5%8F%91-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/%E2%80%AAC:%5CUsers%5Cbutters%5CPictures%5C1.PNG">
+      <meta itemprop="name" content="A.Yang">
+      <meta itemprop="description" content="当代文学大师——杨爱民">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="仰山杨爱民">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/29/openni%E5%BC%80%E5%8F%91-1/" class="post-title-link" itemprop="url">openni开发(1)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-29 06:58:38 / 修改时间：07:24:22" itemprop="dateCreated datePublished" datetime="2020-04-29T06:58:38+08:00">2020-04-29</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="openni开发记录（1"><a href="#openni开发记录（1" class="headerlink" title="openni开发记录（1)"></a>openni开发记录（1)</h1><h2 id="1-初识openni"><a href="#1-初识openni" class="headerlink" title="1.初识openni"></a>1.初识openni</h2><p>OpenNI（开放式自然语言交互）是一个多语言，跨平台的框架，它定义了一些可以用来自然交互的API函数。openni的目的是形成一台标准的API，以用来建立下面两个方面之间的通信桥梁：</p>
+<ul>
+<li>视觉和声音传感器（硬件）</li>
+<li>视觉和声音的中间件（<strong>middleware</strong>，分析处理视觉或声音数据的软件组件，如<strong>nite</strong>）</li>
+</ul>
+<p>例如软件接受由rgbd相机 提供的深度信息，返回探测到的手掌在素数据中的位置。openni提供了一组基于传感器设备的API，同时也提供了由中间件实现的API，提供了传感器与中间件的通信接口，即使用中间件处理来自传感器的数据。</p>
+<p>下图为openni的架构原理图：</p>
+<ul>
+<li>顶层： 表示执行自然交互的应用软件</li>
+<li>中间层：表示OpenNI。<strong>OpenNI本身负责与硬件部分的沟通，中间件可以做进一步的数据处理，如手势跟踪等</strong></li>
+<li>底层：表示捕获场景中视频和音频元素的硬件设备，如3D sensor，RGB camera，Audio device</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/28/light-coding/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/%E2%80%AAC:%5CUsers%5Cbutters%5CPictures%5C1.PNG">
+      <meta itemprop="name" content="A.Yang">
+      <meta itemprop="description" content="当代文学大师——杨爱民">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="仰山杨爱民">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/28/light-coding/" class="post-title-link" itemprop="url">结构光深度感应器原理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-28 13:14:56" itemprop="dateCreated datePublished" datetime="2020-04-28T13:14:56+08:00">2020-04-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-02 02:31:14" itemprop="dateModified" datetime="2020-06-02T02:31:14+08:00">2020-06-02</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="关于以Astra-mini为代表的结构光深度相机的原理"><a href="#关于以Astra-mini为代表的结构光深度相机的原理" class="headerlink" title="关于以Astra mini为代表的结构光深度相机的原理"></a>关于以Astra mini为代表的结构光深度相机的原理</h1><h2 id="1-结构"><a href="#1-结构" class="headerlink" title="1. 结构"></a>1. 结构</h2><p>​        深度模块由IR LIGHT（红外激光器）和Depth CMOS(深度感应器)组成。中间的则是一个彩色图像感应器(COLOR IMAGE CMOS)。</p>
+<p>​        如图所示：</p>
+<h2 id="2-原理"><a href="#2-原理" class="headerlink" title="2.原理"></a>2.原理</h2><p>​        结构光深度相机采用的是光编码技术(light coding)，这是一种光学技术。本质上是产生一张红外激光编码图(IR light coding image)，通过红外激光器打到空间中，使相机可见范围内任一点都被标记上肉眼不可见的红外线散斑。由于散斑具有高度的随机性，因此空间中任何两个不同深度处的散斑都会是不同的图案。深度感应器（红外接收器）截取空间中的红外线影像，把影像交给相机内部芯片(<strong>XTION: PS1080</strong>)处理，最终算出深度图。</p>
+<p>​        所谓散斑是指： 当相干光从粗糙表面反射，会形成不规则的强度分布，出现随机分布的斑点。这些随机分布的斑点，就称为散斑。</p>
+<p>​        散斑有一个重要的性质：<strong>随距离的不同而不同</strong>。也就是说，只要在空间中打出这样的光并加以记忆，等于在整个空间中都做了标记。把一个物体放进这个空间后，可以根据物体处散斑的变化计算物体的深度。</p>
+{% assert _img 3.jpg 散斑 %}
+
+<p><img src="/.com//3.jpg" alt></p>
+<h2 id="3-精确度分析"><a href="#3-精确度分析" class="headerlink" title="3.精确度分析"></a>3.精确度分析</h2><p>​        形成的散斑质量决定了深度图的质量。</p>
+<p>​        在下面一张深度图中，黑色部分代表无法精确获得深度信息。分析图片中的黑色区域：</p>
+<ul>
+<li>靠近镜头处（右下角）：距离太近无法形成有效的散斑</li>
+<li>照明灯处： 直接的光照对深度感应器接受红外数据产生影响，这也是结构光相机在室外表现不好的原因</li>
+<li>图片中较远处：距离较远，散斑的密度下降，精确度也随之下降</li>
+</ul>
+<p><img src="/.com//2.jpg" alt></p>
+<p>​        另外，在以下几种情况下也无法形成有效的散斑：</p>
+<ul>
+<li><p>透明材质或镜面材质。因为红外激光在这种材质下无法产生漫反射，也就无法形成有效的散斑。实际工作中，包括材质的颜色也会影响到深度的侦测</p>
+</li>
+<li><p>遮蔽情况：当一个物体被其他非透明物体遮挡，这样红外激光不能照射到物体，深度也不可知</p>
+<p>图</p>
+</li>
+</ul>
+<p><img src="/.com//1.jpg" alt="111"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/22/ROS%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/%E2%80%AAC:%5CUsers%5Cbutters%5CPictures%5C1.PNG">
+      <meta itemprop="name" content="A.Yang">
+      <meta itemprop="description" content="当代文学大师——杨爱民">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="仰山杨爱民">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/22/ROS%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF/" class="post-title-link" itemprop="url">ROS自定义消息</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-22 08:25:33 / 修改时间：09:05:56" itemprop="dateCreated datePublished" datetime="2020-04-22T08:25:33+08:00">2020-04-22</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>ROS自定义消息，需要先建立msg文件后再编译生成头文件</p>
+<h1 id="主要流程"><a href="#主要流程" class="headerlink" title="主要流程"></a>主要流程</h1><ol>
+<li><p>在src同级目录下建立msg文件夹</p>
+</li>
+<li><p>在msg文件夹创建  <strong>xxx.msg</strong>文件，一定要以msg为后缀，并在里面定义数据类型：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int64 person_id</span><br><span class="line">geometry_msgs::Point p</span><br></pre></td></tr></table></figure>
+
+<p><strong>需要注意的是ros中有特定的消息类型，如必须使用int64来代替int</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">msg</th>
+<th align="center">c++对应类型</th>
+<th align="center">python对应类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">bool</td>
+<td align="center">bool</td>
+<td align="center">bool</td>
+</tr>
+<tr>
+<td align="left">int8</td>
+<td align="center">int8_t</td>
+<td align="center">int</td>
+</tr>
+<tr>
+<td align="left">int16</td>
+<td align="center">int16_t</td>
+<td align="center">int</td>
+</tr>
+<tr>
+<td align="left">int32</td>
+<td align="center">int32_t</td>
+<td align="center">int</td>
+</tr>
+<tr>
+<td align="left">int64</td>
+<td align="center">int64_t</td>
+<td align="center">int,long</td>
+</tr>
+<tr>
+<td align="left">uint8</td>
+<td align="center">uint8_t</td>
+<td align="center">int</td>
+</tr>
+<tr>
+<td align="left">uint16</td>
+<td align="center">uint16_t</td>
+<td align="center">int</td>
+</tr>
+<tr>
+<td align="left">uint32</td>
+<td align="center">uint32_t</td>
+<td align="center">int</td>
+</tr>
+<tr>
+<td align="left">uint64</td>
+<td align="center">uint64_t</td>
+<td align="center">long</td>
+</tr>
+<tr>
+<td align="left">float32</td>
+<td align="center">float</td>
+<td align="center">float</td>
+</tr>
+<tr>
+<td align="left">float64</td>
+<td align="center">float</td>
+<td align="center">float</td>
+</tr>
+<tr>
+<td align="left">string</td>
+<td align="center">std::string</td>
+<td align="center">str</td>
+</tr>
+<tr>
+<td align="left">time</td>
+<td align="center">ros::Time</td>
+<td align="center">rospy.Time</td>
+</tr>
+<tr>
+<td align="left">duration</td>
+<td align="center">ros::Duration</td>
+<td align="center">rospy.Duration</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<ol start="3">
+<li><p>添加编译支持</p>
+<ol>
+<li><p>在<code>package.xml</code>中添加编译依赖项和运行依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;build_depend&gt;message_generation&lt;&#x2F;build_depend&gt;</span><br><span class="line">&lt;run_depend&gt;message_runtime&lt;&#x2F;run_depend&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>CMakeLists.txt:</code></p>
+<ol>
+<li><p><code>find_package()</code>中添加message_generation</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">find_package(catkin REQUIRED COMPONENTS</span><br><span class="line">  roscpp</span><br><span class="line">  rosmsg</span><br><span class="line">  rospy</span><br><span class="line">  message_generation</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>add_message_files()</code>中添加 xxx.msg</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">add_message_files(</span><br><span class="line">        FILES</span><br><span class="line">        xxx.msg</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加<code>generation_msg</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">generate_messages(</span><br><span class="line">        DEPENDENCIES</span><br><span class="line">        std_msgs</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改<code>catkin_package</code>，结果如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">catkin_package(</span><br><span class="line">#  INCLUDE_DIRS include</span><br><span class="line">#  LIBRARIES demo_msg</span><br><span class="line">#  CATKIN_DEPENDS roscpp rosmsg rospy</span><br><span class="line">#  DEPENDS system_lib</span><br><span class="line">        CATKIN_DEPENDS message_runtime</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h1 id="检验生成的自定义消息"><a href="#检验生成的自定义消息" class="headerlink" title="检验生成的自定义消息"></a>检验生成的自定义消息</h1><h3 id="1-编译项目"><a href="#1-编译项目" class="headerlink" title="1. 编译项目"></a>1. 编译项目</h3><p>来到工作空间目录下，运行编译</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">catkin_make</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-查看生成的头文件"><a href="#2-查看生成的头文件" class="headerlink" title="2. 查看生成的头文件"></a>2. 查看生成的头文件</h3><p>来到<code>devel</code>的<code>include</code>目录下，如果生成了头文件说明，自定义消息创建成功。</p>
+<h3 id="3-通过rosmsg工具校验"><a href="#3-通过rosmsg工具校验" class="headerlink" title="3. 通过rosmsg工具校验"></a>3. 通过rosmsg工具校验</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rosmsg show rplidar_ros/obstacleMsg.h</span><br></pre></td></tr></table></figure>
+
+<p>查看运行结果，运行结果和自己定义的相一致，说明成功。</p>
+<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>在需要使用的”.cpp”文件中添加</p>
+<p><code>#include &lt;rplidar_ros/obstacleMsg.h&gt;</code><br>其中rplidar_ros是消息文件夹msg或该消息所在的ROS包的名字,obstacleMsg.h是消息的名字对应的”.h”文件</p>
+<p>使用时要按照下面格式定义变量</p>
+<p><code>rplidar_ros::obstacleMsg obstacle;</code><br>其中rplidar_ros是消息文件夹msg或该消息所在的ROS包的名字,obstacleMsg是消息的名字,obstacle是根据自定义消息类型定义的变量</p>
+<p>定义后按照下面方法赋值使用</p>
+<p>obstacle.data = 0x01;</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/22/ROS%E7%BC%96%E7%A8%8B1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/%E2%80%AAC:%5CUsers%5Cbutters%5CPictures%5C1.PNG">
+      <meta itemprop="name" content="A.Yang">
+      <meta itemprop="description" content="当代文学大师——杨爱民">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="仰山杨爱民">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/22/ROS%E7%BC%96%E7%A8%8B1/" class="post-title-link" itemprop="url">ROS话题编程</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-22 07:29:39 / 修改时间：08:16:44" itemprop="dateCreated datePublished" datetime="2020-04-22T07:29:39+08:00">2020-04-22</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="话题通讯机制"><a href="#话题通讯机制" class="headerlink" title="话题通讯机制"></a>话题通讯机制</h1><p>ROS的核心就是分布式通讯机制，ROS的所有软件和工具都是基于这种分布式通讯机制之上的。ROS的通讯机制主要有：</p>
+<ul>
+<li>话题通讯（topic）</li>
+<li>服务通讯（server）</li>
+<li>动作通讯（action）</li>
+</ul>
+<p>话题通讯是最为复杂，最为频繁的通讯模式，其模型如下图所示：</p>
+<p><img src="/.com//C:%5CUsers%5Cbutters%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1587512155677.png" alt="1587512155677"></p>
+<p>ROS 通信机制的过程：</p>
+<ol>
+<li><p>Talker启动，通过端口向节点管理器（ROS Master）注册发布者的信息，包含所要发布消息的话题名;随后ROS Master会将该节点的注册信息放入注册列表中储存起来，以等待接受此话题的接收者Listener。 </p>
+</li>
+<li><p>Listener启动，通过使用RPC向节点管理器（ROS Master）注册接收者的信息，包括所需订阅的话题名。 </p>
+</li>
+<li><p>ROS Master根据Listener所需的订阅话题在注册列表寻找与之匹配的话题，如果没有找到匹配的发布者，则等待发布者的加入，如果找到可以与之匹配的发布者信息，则可以向Listener发送Talker的RPC地址信息。 </p>
+</li>
+<li><p>Listener接收到Talker的RPC地址信息，就尝试向Talker发送连接许可，以便于传输订阅的话题名，消息类型以及TCP/UDP。 </p>
+</li>
+<li><p>Talker接受到Listener发来的连接请求后，继续向Listener确认链接信息，其中包括其本身的TCP信息 </p>
+</li>
+<li><p>Listener接收到确认的消息后，使用TCP与Talker进行连接 </p>
+</li>
+</ol>
+<p>连接成功后，Talker向Listener发送话题消息类型。</p>
+<p><strong>节点通过话题发布消息，节点也可以订阅话题来接收来自其他节点的消息</strong></p>
+<p>一个简单的例子：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* talker.cpp */</span></span><br><span class="line"><span class="comment">/*---------------------*/</span></span><br><span class="line">include <span class="string">"ros/ros.h"</span></span><br><span class="line">include &lt;iostream&gt;</span><br><span class="line">include <span class="string">"std_msgs/String.h"</span></span><br><span class="line">include &lt;sstream&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">    <span class="comment">//ros节点初始化</span></span><br><span class="line">    ros::init(argc,argv,<span class="string">"talker"</span>)</span><br><span class="line">    <span class="comment">//创建节柄(是节点与master通讯的工具)</span></span><br><span class="line">    ros::NodeHandle nh;</span><br><span class="line">    <span class="comment">//创建一个publisher，发布chatter话题，消息类型为std_msgs::String</span></span><br><span class="line">    ros::Publisher chatter_pub = nh.advertise&lt;std_msgs::<span class="keyword">String</span>&gt;(<span class="string">"chatter"</span>,<span class="number">10</span>);</span><br><span class="line">    <span class="comment">// 设置循环的频率</span></span><br><span class="line">    <span class="function">ros::Rate <span class="title">loop_rate</span><span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(ros::ok())</span><br><span class="line">        &#123;</span><br><span class="line">        <span class="comment">// 初始化std_msgs::String类型的消息</span></span><br><span class="line">        std_msgs::<span class="keyword">String</span> msg;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">stringstream</span> ss;</span><br><span class="line">        ss &lt;&lt; <span class="string">"this hello world is from C++"</span> &lt;&lt; count;</span><br><span class="line">        msg.data = ss.str();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 发布消息</span></span><br><span class="line">        ROS_INFO(<span class="string">"%s"</span>, msg.data.c_str());</span><br><span class="line">        chatter_pub.publish(msg);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 循环等待回调函数</span></span><br><span class="line">        ros::spinOnce();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 按照循环频率延时</span></span><br><span class="line">        loop_rate.sleep();</span><br><span class="line">        ++count;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* listener.cpp */</span></span><br><span class="line"><span class="comment">/*---------------------*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"ros/ros.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"std_msgs/String.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义回调函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">chatterCallback</span><span class="params">(<span class="keyword">const</span> std_msgs::<span class="keyword">String</span>::ConstPtr&amp; msg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ROS_INFO(<span class="string">"I heard:[%s]"</span>,msg-&gt;data.c_str());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//初始化ROS节点</span></span><br><span class="line">    ros::init(argc,argv,<span class="string">"listener"</span>);</span><br><span class="line">    <span class="comment">//句柄</span></span><br><span class="line">    ros::NodeHandle nh;</span><br><span class="line">    <span class="comment">//创建一个subscriber，订阅chatter话题，接受来自publisher的消息，并触发回调函数chatterCallback</span></span><br><span class="line">    ros::Subscriber sub = nh.subscribe(<span class="string">"chatter"</span>,<span class="number">1000</span>,chatterCallback);</span><br><span class="line">    <span class="comment">//循环等待回调函数</span></span><br><span class="line">    ros::spin()</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/13/Linux%E8%87%AA%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/%E2%80%AAC:%5CUsers%5Cbutters%5CPictures%5C1.PNG">
+      <meta itemprop="name" content="A.Yang">
+      <meta itemprop="description" content="当代文学大师——杨爱民">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="仰山杨爱民">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/13/Linux%E8%87%AA%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/" class="post-title-link" itemprop="url">Linux自启动脚本</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-13 15:23:56" itemprop="dateCreated datePublished" datetime="2020-04-13T15:23:56+08:00">2020-04-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-15 09:49:04" itemprop="dateModified" datetime="2020-04-15T09:49:04+08:00">2020-04-15</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="关于Linux自启动脚本"><a href="#关于Linux自启动脚本" class="headerlink" title="关于Linux自启动脚本"></a>关于Linux自启动脚本</h1><h2 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h2><p>Linux系统开机会执行以下几个步骤：</p>
+<ul>
+<li>读取/etc/inittab配置文件，设定系统运行级别</li>
+<li>系统初始化</li>
+<li>执行/etc/rc.d下的rc脚本，其中<strong>/etc/rc.d/rc.local</strong>自启动脚本留给用户自定义功能</li>
+</ul>
+<h2 id="方法一：在-etc-rc-local中添加指令"><a href="#方法一：在-etc-rc-local中添加指令" class="headerlink" title="方法一：在/etc/rc.local中添加指令"></a>方法一：在/etc/rc.local中添加指令</h2><p><strong>在 Ubuntu16.04及以上版本已经失效</strong></p>
+<p>只要将指令写进该脚本，指令就会在开机时自动执行。</p>
+<p>如果你没有修改过你的rc.local文件，那么应该如以下所示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh -e</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> rc.local</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> This script is executed at the end of each multiuser runlevel.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Make sure that the script will <span class="string">"exit 0"</span> on success or any other</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> value on error.</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> In order to <span class="built_in">enable</span> or <span class="built_in">disable</span> this script just change the execution</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> bits.</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> By default this script does nothing.</span></span><br><span class="line"></span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure>
+
+<p>exit 0 是结束符，这是因为当返回值为0时，系统才判定该脚本执行正确，我们要做的就是要把要执行的指令添加在exit 0之前。</p>
+<p>也可以先将脚本文件写好，然后再添加至rc.local文件中。</p>
+<p>例如：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! bin/bash</span></span><br><span class="line"><span class="comment">#将信息记录至log.txt中</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"script start!"</span> &gt; /home/butters/log.txt</span><br><span class="line">sleep(10)<span class="comment">#等待10s</span></span><br><span class="line">/home/butters/astra_arm/bin/BodyReaderPoll &gt; /home/butters/log.txt</span><br><span class="line"><span class="comment"># 可执行程序的绝对路径</span></span><br></pre></td></tr></table></figure>
+
+<p>脚本文件写好之后，要给予其可执行权限：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x ***.sh</span><br></pre></td></tr></table></figure>
+
+<p>将该脚本添加至rc.local之中即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">绝对路径&#x2F;***.sh</span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure>
+
+
+
+<p>————————————————————————————————————————</p>
+<h2 id="方法二：使用Ubuntu自带的自启动程序"><a href="#方法二：使用Ubuntu自带的自启动程序" class="headerlink" title="方法二：使用Ubuntu自带的自启动程序"></a>方法二：使用Ubuntu自带的自启动程序</h2><p>Ubuntu16.04自带了自启动程序，使用起来十分方便。</p>
+<p><strong>gnome-session-properties</strong></p>
+<p>同样的，脚本文件编写好之后，赋予可执行权限，再添加至该程序之中即可。</p>
+<p>Ubuntu 16.04 mate也是一样的，在终端中输入：mate-session-properties,再添加脚本文件即可。</p>
+<p>也可以通过界面进入：(<a href="https://www.corvin.cn/wp-content/uploads/image/20180531/1527737330451564.png）" target="_blank" rel="noopener">https://www.corvin.cn/wp-content/uploads/image/20180531/1527737330451564.png）</a></p>
+<p><img src="https://www.corvin.cn/wp-content/uploads/image/20180531/1527737330451564.png" alt="Screenshot from 2018-05-31 10:57:01.png"></p>
+<p>————————————————————————————————————————</p>
+<h2 id="方法三：使用systemd文件"><a href="#方法三：使用systemd文件" class="headerlink" title="方法三：使用systemd文件"></a>方法三：使用systemd文件</h2><hr>
+<p><font color="#FF0000"> 从 Ubuntu 16.10 开始的新版本全部使用 systemd 实现初始化时服务的自启动</font></p>
+<p>systemd 默认读取 /etc/systemd/system 下的配置文件，该目录下的文件会链接/lib/systemd/system/下的文件</p>
+<p>所以，我们要在<strong>/etc/systemd/system</strong>中创建service脚本文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;my_script.service</span><br></pre></td></tr></table></figure>
+
+<p>一般正常的启动文件主要分成三部分</p>
+<p>[Unit] 段: 启动顺序与依赖关系<br> [Service] 段: 启动行为,如何启动，启动类型<br> [Install] 段: 定义如何安装这个配置文件，即怎样做到开机启动</p>
+<p>——————————————————————————————————————</p>
+<h2 id="方法四：使用crontab命令"><a href="#方法四：使用crontab命令" class="headerlink" title="方法四：使用crontab命令"></a>方法四：使用crontab命令</h2><ol>
+<li>编写脚本文件script.sh并赋予可执行权限</li>
+<li>crontab  -e编辑crontab文件</li>
+<li>@reoot  绝对路径/script.sh</li>
+</ol>
+<p><strong>在一些 Linux 发行版（如 ArchLinux），默认情况下 cron 功能是被关闭的，</strong><br><strong>使用如下命令，将对应服务的开启即可</strong></p>
+<p>sudo systemctl enable cronie</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/13/20200413/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/%E2%80%AAC:%5CUsers%5Cbutters%5CPictures%5C1.PNG">
+      <meta itemprop="name" content="A.Yang">
+      <meta itemprop="description" content="当代文学大师——杨爱民">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="仰山杨爱民">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/13/20200413/" class="post-title-link" itemprop="url">20200413</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-13 12:58:58 / 修改时间：13:03:39" itemprop="dateCreated datePublished" datetime="2020-04-13T12:58:58+08:00">2020-04-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="这是一个test"><a href="#这是一个test" class="headerlink" title="这是一个test"></a>这是一个test</h1><ul>
+<li><p>余欢水也太惨了</p>
+</li>
+<li><p>鼠人真实写照</p>
+</li>
+</ul>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">鼠鼠们不常说能娶谁愿意少活多少年吗？余欢水老婆不错吧，鼠鼠们愿意当余欢水吗？</span><br><span class="line">可以娶这样的老婆。但是要被生活凌辱</span><br></pre></td></tr></table></figure>
+
+<p>  <strong>test</strong></p>
+<p>  <em>over</em></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="A.Yang"
+      src="/%E2%80%AAC:%5CUsers%5Cbutters%5CPictures%5C1.PNG">
+  <p class="site-author-name" itemprop="name">A.Yang</p>
+  <div class="site-description" itemprop="description">当代文学大师——杨爱民</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">A.Yang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
 
 
 
 
   
-    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
 
-    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
-<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+  
 
-  </body>
+</body>
 </html>
