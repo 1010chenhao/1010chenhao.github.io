@@ -20,30 +20,33 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Butters&#39; personal blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="On the Road">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="Java反射：原理、使用1.定义Java的反射机制：在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法，对于任意一个对象，都能够调用它的任意一个方法和属性。 反射：将类的各个成分映射为一个个Java对象（万物皆对象） Java代码在计算机中的三个阶段： （1）源代码阶段 例如定义一个Person类： 123456789101112131415Public class Person&amp;#1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java学习（反射）">
+<meta property="og:url" content="http://yoursite.com/2021/03/06/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%8F%8D%E5%B0%84%EF%BC%89/index.html">
 <meta property="og:site_name" content="On the Road">
-<meta property="og:description" content="Butters&#39; personal blog">
+<meta property="og:description" content="Java反射：原理、使用1.定义Java的反射机制：在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法，对于任意一个对象，都能够调用它的任意一个方法和属性。 反射：将类的各个成分映射为一个个Java对象（万物皆对象） Java代码在计算机中的三个阶段： （1）源代码阶段 例如定义一个Person类： 123456789101112131415Public class Person&amp;#1">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-06T06:09:08.000Z">
+<meta property="article:modified_time" content="2021-03-07T08:17:58.351Z">
 <meta property="article:author" content="Butters">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2021/03/06/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%8F%8D%E5%B0%84%EF%BC%89/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>On the Road</title>
+  <title>Java学习（反射） | On the Road</title>
   
 
 
@@ -157,9 +160,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -175,10 +179,9 @@
       <meta itemprop="name" content="On the Road">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/06/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%8F%8D%E5%B0%84%EF%BC%89/" class="post-title-link" itemprop="url">Java学习（反射）</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Java学习（反射）
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -198,6 +201,13 @@
               </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
 
         </div>
       </header>
@@ -208,7 +218,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Java反射：原理、使用"><a href="#Java反射：原理、使用" class="headerlink" title="Java反射：原理、使用"></a>Java反射：原理、使用</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h3><p>Java的反射机制：在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法，对于任意一个对象，都能够调用它的任意一个方法和属性。</p>
+        <h2 id="Java反射：原理、使用"><a href="#Java反射：原理、使用" class="headerlink" title="Java反射：原理、使用"></a>Java反射：原理、使用</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h3><p>Java的反射机制：在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法，对于任意一个对象，都能够调用它的任意一个方法和属性。</p>
 <p>反射：将类的各个成分映射为一个个Java对象（<strong>万物皆对象</strong>）</p>
 <p>Java代码在计算机中的三个阶段：</p>
 <p>（1）源代码阶段</p>
@@ -299,691 +309,34 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> reflect;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Constructor;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Field;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FruitMethodTest</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        Class cls2 = Class.forName(<span class="string">"reflect.Fruit"</span>);</span><br><span class="line">        <span class="comment">//获取所有的公有方法</span></span><br><span class="line">        Method[] methods = cls2.getMethods();</span><br><span class="line">        <span class="comment">//打印所有的公有方法</span></span><br><span class="line">        System.out.println(<span class="string">"****打印所有的公有方法****"</span>);</span><br><span class="line">        <span class="keyword">for</span>(Method m : methods)&#123;</span><br><span class="line">            System.out.println(m);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取所有的方法</span></span><br><span class="line">        Method[] methanol = cls2.getDeclaredMethods();</span><br><span class="line">        <span class="comment">//打印所有方法</span></span><br><span class="line">        System.out.println(<span class="string">"****打印所有的方法****"</span>);</span><br><span class="line">        <span class="keyword">for</span>(Method m : methanol)&#123;</span><br><span class="line">            System.out.println(m);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取某个指定的公有方法</span></span><br><span class="line">        Method method = cls2.getMethod(<span class="string">"askPrice"</span>,<span class="keyword">int</span><span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">        System.out.println(method);</span><br><span class="line">        <span class="comment">//实例化一个对象</span></span><br><span class="line">        Fruit pear = (Fruit)(cls2.getConstructor().newInstance());</span><br><span class="line">        method.invoke(pear,<span class="number">1200</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取某个指定的方法（不在乎修饰符）</span></span><br><span class="line">        method = cls2.getDeclaredMethod(<span class="string">"sellFruit"</span>,String<span class="class">.<span class="keyword">class</span>,<span class="title">int</span>.<span class="title">class</span>)</span>;</span><br><span class="line">        <span class="comment">//暴力访问</span></span><br><span class="line">        method.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">        method.invoke(pear,<span class="string">"peach"</span>,<span class="number">10000</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/08/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%B3%9B%E5%9E%8B%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/3.png">
-      <meta itemprop="name" content="Butters">
-      <meta itemprop="description" content="Butters' personal blog">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="On the Road">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/08/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%B3%9B%E5%9E%8B%EF%BC%89/" class="post-title-link" itemprop="url">Java学习（泛型）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-09-08 21:43:49" itemprop="dateCreated datePublished" datetime="2020-09-08T21:43:49+08:00">2020-09-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-09 11:17:35" itemprop="dateModified" datetime="2020-09-09T11:17:35+08:00">2020-09-09</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>增加泛型很大程度上都是为了让集合记住其数据类型。在没有泛型之前，一旦把一个对象“丢进”集合里之后，集合就会把所有的对象当做Object类型处理。当程序从集合中取出对象之后，必须进行强制类型转换。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/03/Java%E5%AD%A6%E4%B9%A02%EF%BC%88%E9%9B%86%E5%90%88%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/3.png">
-      <meta itemprop="name" content="Butters">
-      <meta itemprop="description" content="Butters' personal blog">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="On the Road">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/03/Java%E5%AD%A6%E4%B9%A02%EF%BC%88%E9%9B%86%E5%90%88%EF%BC%89/" class="post-title-link" itemprop="url">Java学习2（集合）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-09-03 14:24:43" itemprop="dateCreated datePublished" datetime="2020-09-03T14:24:43+08:00">2020-09-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-04 23:58:10" itemprop="dateModified" datetime="2020-09-04T23:58:10+08:00">2020-09-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Java集合"><a href="#Java集合" class="headerlink" title="Java集合"></a>Java集合</h2><p>为了保存数量不确定的数据，以及保存具有映射关系的数据（也被称为关联数组），java提供了集合类。</p>
-<p><strong>Collection</strong>接口是List、Set和Queue接口的父接口，该接口中定义了一系列关于增删查改的方法，适用于所有的List、Set和Queue接口</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/09/03/Java%E5%AD%A6%E4%B9%A02%EF%BC%88%E9%9B%86%E5%90%88%EF%BC%89/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/30/Java%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/3.png">
-      <meta itemprop="name" content="Butters">
-      <meta itemprop="description" content="Butters' personal blog">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="On the Road">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/30/Java%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">Java学习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-30 10:38:14" itemprop="dateCreated datePublished" datetime="2020-08-30T10:38:14+08:00">2020-08-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-03 14:24:03" itemprop="dateModified" datetime="2020-09-03T14:24:03+08:00">2020-09-03</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Chapter-6-面向对象（下）"><a href="#Chapter-6-面向对象（下）" class="headerlink" title="Chapter 6 面向对象（下）"></a>Chapter 6 面向对象（下）</h1><h2 id="基础类型与包装类的转换关系"><a href="#基础类型与包装类的转换关系" class="headerlink" title="基础类型与包装类的转换关系"></a>基础类型与包装类的转换关系</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/08/30/Java%E5%AD%A6%E4%B9%A0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/09/08/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%B3%9B%E5%9E%8B%EF%BC%89/" rel="prev" title="Java学习（泛型）">
+      <i class="fa fa-chevron-left"></i> Java学习（泛型）
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/25/%E7%9B%AE%E6%A0%87%E8%B7%9F%E8%B8%AA%E7%B3%BB%E5%88%97%EF%BC%9AmfDiMP%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/3.png">
-      <meta itemprop="name" content="Butters">
-      <meta itemprop="description" content="Butters' personal blog">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="On the Road">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/25/%E7%9B%AE%E6%A0%87%E8%B7%9F%E8%B8%AA%E7%B3%BB%E5%88%97%EF%BC%9AmfDiMP%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">目标跟踪系列：mfDiMP学习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-08-25 14:32:33 / 修改时间：17:15:34" itemprop="dateCreated datePublished" datetime="2020-08-25T14:32:33+08:00">2020-08-25</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" itemprop="url" rel="index"><span itemprop="name">论文阅读</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Multi-Modal-Fusion-for-End-to-End-RGB-T-Tracking"><a href="#Multi-Modal-Fusion-for-End-to-End-RGB-T-Tracking" class="headerlink" title="Multi-Modal Fusion for End-to-End RGB-T Tracking"></a>Multi-Modal Fusion for End-to-End RGB-T Tracking</h1><p>by: Lichao Zhang</p>
-<p>published on: ICCV 2019</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/08/25/%E7%9B%AE%E6%A0%87%E8%B7%9F%E8%B8%AA%E7%B3%BB%E5%88%97%EF%BC%9AmfDiMP%E5%AD%A6%E4%B9%A0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/25/No-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/3.png">
-      <meta itemprop="name" content="Butters">
-      <meta itemprop="description" content="Butters' personal blog">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="On the Road">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/25/No-1/" class="post-title-link" itemprop="url">No.1</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-08-25 01:39:32 / 修改时间：02:10:59" itemprop="dateCreated datePublished" datetime="2020-08-25T01:39:32+08:00">2020-08-25</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          这是一篇加密文章，内容可能是个人情感宣泄或者收费技术
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/08/25/No-1/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/24/%E7%9B%AE%E6%A0%87%E8%B7%9F%E8%B8%AA%E7%B3%BB%E5%88%97%EF%BC%9ADiMP%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/3.png">
-      <meta itemprop="name" content="Butters">
-      <meta itemprop="description" content="Butters' personal blog">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="On the Road">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/24/%E7%9B%AE%E6%A0%87%E8%B7%9F%E8%B8%AA%E7%B3%BB%E5%88%97%EF%BC%9ADiMP%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">目标跟踪系列：DiMP学习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-08-24 15:39:59 / 修改时间：21:45:48" itemprop="dateCreated datePublished" datetime="2020-08-24T15:39:59+08:00">2020-08-24</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" itemprop="url" rel="index"><span itemprop="name">论文阅读</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a href="https://arxiv.org/pdf/1904.07220.pdf" target="_blank" rel="noopener">论文地址</a></p>
-<h1 id="Learning-Discriminative-Model-Prediction-for-Tracking"><a href="#Learning-Discriminative-Model-Prediction-for-Tracking" class="headerlink" title="Learning Discriminative Model Prediction for Tracking"></a>Learning Discriminative Model Prediction for Tracking</h1><p>by: Martin Danelljan</p>
-<p>published on: ICCV 2019</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/08/24/%E7%9B%AE%E6%A0%87%E8%B7%9F%E8%B8%AA%E7%B3%BB%E5%88%97%EF%BC%9ADiMP%E5%AD%A6%E4%B9%A0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/23/octomap-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/3.png">
-      <meta itemprop="name" content="Butters">
-      <meta itemprop="description" content="Butters' personal blog">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="On the Road">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/23/octomap-1/" class="post-title-link" itemprop="url">octomap--1</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-23 17:13:47" itemprop="dateCreated datePublished" datetime="2020-07-23T17:13:47+08:00">2020-07-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-24 21:30:16" itemprop="dateModified" datetime="2020-08-24T21:30:16+08:00">2020-08-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">图像处理</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="OCTOMAP-1"><a href="#OCTOMAP-1" class="headerlink" title="OCTOMAP (1)"></a>OCTOMAP (1)</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>一般而言RGB-D SLAM的目的有以下两个：</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/07/23/octomap-1/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/11/minArea%E5%87%BD%E6%95%B0%E5%88%86%E6%9E%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/3.png">
-      <meta itemprop="name" content="Butters">
-      <meta itemprop="description" content="Butters' personal blog">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="On the Road">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/11/minArea%E5%87%BD%E6%95%B0%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">minAreaRect函数分析</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-11 11:30:23" itemprop="dateCreated datePublished" datetime="2020-06-11T11:30:23+08:00">2020-06-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-24 21:30:04" itemprop="dateModified" datetime="2020-08-24T21:30:04+08:00">2020-08-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">图像处理</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>​    该 函数计算并返回指定点集（vector或mat）的最小包围矩形。</p>
-<p>RotatedRect minAreaRect（inputarray points）</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/11/depth2gray-gray2rgb/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/3.png">
-      <meta itemprop="name" content="Butters">
-      <meta itemprop="description" content="Butters' personal blog">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="On the Road">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/11/depth2gray-gray2rgb/" class="post-title-link" itemprop="url">depth2gray&&gray2rgb</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-11 09:31:00" itemprop="dateCreated datePublished" datetime="2020-06-11T09:31:00+08:00">2020-06-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-24 21:28:56" itemprop="dateModified" datetime="2020-08-24T21:28:56+08:00">2020-08-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">图像处理</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="深度图转化为灰度图："><a href="#深度图转化为灰度图：" class="headerlink" title="深度图转化为灰度图："></a>深度图转化为灰度图：</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/11/depth2gray-gray2rgb/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
 
 
 
@@ -1035,6 +388,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java反射：原理、使用"><span class="nav-number">1.</span> <span class="nav-text">Java反射：原理、使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-定义"><span class="nav-number">1.1.</span> <span class="nav-text">1.定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-获取Class类对象的方式"><span class="nav-number">1.2.</span> <span class="nav-text">2. 获取Class类对象的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-通过Class类对象调用构造方法并使用"><span class="nav-number">1.3.</span> <span class="nav-text">3.通过Class类对象调用构造方法并使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-通过Class类对象调用成员变量并赋值"><span class="nav-number">1.4.</span> <span class="nav-text">4. 通过Class类对象调用成员变量并赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-通过Class类对象调用成员方法并使用"><span class="nav-number">1.5.</span> <span class="nav-text">5. 通过Class类对象调用成员方法并使用</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
